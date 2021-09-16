@@ -36,7 +36,14 @@ function renderSquare(square, colorPalette) {
         let colorValue = colorPalette.value;
         square.style.backgroundColor = colorValue;
         square.transparency = 1;
-    }else{
+    }
+    else if(mode === 'rainbow') {
+        let randomNumber = Math.floor((1 << 24) * Math.random()).toString(16);
+        randomNumber = ('000000' + randomNumber).slice(6);
+        square.style.backgroundColor = '#' + randomNumber;
+        square.transparency = 1;
+    }
+    else{
         let hexNumber = colorPalette.value.slice(1, colorPalette.value.length);
         let red = parseInt(hexNumber.slice(0, 2), 16);
         let green = parseInt(hexNumber.slice(2, 4), 16);

@@ -9,6 +9,7 @@ let colorPalette = document.querySelector('input[type=color]');
 let gridRange = document.querySelector('input[type=range]');
 let squares_nums = document.querySelectorAll('.squares-num');
 let normalBtn = document.querySelector('#normal-btn');
+let rainbowBtn = document.querySelector('#rainbow-btn');
 let specialBtn = document.querySelector('#special-btn');
 let clearBtn = document.querySelector('#clear-btn');
 
@@ -28,6 +29,10 @@ function init() {
     normalBtn.addEventListener('click', (e) => {
         Canvas.setMode('normal')
         changeActiveBtn(document.querySelector('.active-btn'), normalBtn);
+    });
+    rainbowBtn.addEventListener('click', (e) => {
+        Canvas.setMode('rainbow');
+        changeActiveBtn(document.querySelector('.active-btn'), rainbowBtn);
     });
     specialBtn.addEventListener('click', (e) => {
         Canvas.setMode('special')
