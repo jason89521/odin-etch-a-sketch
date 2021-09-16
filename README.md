@@ -1,7 +1,6 @@
 # Etch-A-Sketch
 
 ## The main idea
----
 Since the script would be too complex if I write everything to a file, I divided them into three file.
 One is **main.js**, which contains all html element I need.
 Second is **canvas.js**, this file contains all method about how to render girds, how to change drawing mode, and so on.
