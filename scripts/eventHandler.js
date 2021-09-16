@@ -16,4 +16,12 @@ function changeActiveBtn(oldBtnSelectoer, newBtnSelector) {
     document.querySelector(newBtnSelector).classList.add('active-btn');
 }
 
-export {changeSquresNum, changeActiveBtn};
+/**
+ * 
+ * @param {HTMLElement} displayElement 
+ * @param {string} color
+ */
+function changeDisplayColor(displayElement, color) {
+    displayElement.style.backgroundColor = color;
+}
+export {changeSquresNum, changeActiveBtn, changeDisplayColor};

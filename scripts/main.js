@@ -1,5 +1,5 @@
 import * as MyCanvas from "./canvas.js";
-import { changeSquresNum, changeActiveBtn } from "./eventHandler.js"
+import { changeSquresNum, changeActiveBtn, changeDisplayColor } from "./eventHandler.js"
 
 // Canvas related
 const canvas = document.querySelector('.canvas');
@@ -9,6 +9,7 @@ const colorPalette = document.querySelector('input[type=color]');
 const gridRange = document.querySelector('input[type=range]');
 const squares_nums = document.querySelectorAll('.squares-num');
 const controlPanel = document.querySelector('.control-panel');
+const colorBtn = document.querySelector('#color-btn');
 
 init();
 
@@ -33,9 +34,15 @@ function init() {
 
         if(e.target.dataset.btn === 'clear')
             MyCanvas.clearCanvas(canvas);
+        else if(e.target.dataset.btn === 'color')
+            colorPalette.click();
         else{
             MyCanvas.setMode(e.target.dataset.btn);
             changeActiveBtn('.active-btn', '#' + e.target.dataset.btn + '-btn');
         }
     });
+
+    colorPalette.addEventListener('change', (e) => changeDisplayColor(colorBtn, colorPalette.value));
+
+    colorBtn.style.backgroundColor = colorPalette.value;
 }
