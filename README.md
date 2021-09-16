@@ -15,15 +15,15 @@ This file import `canvas.js` and `eventHandler.js` to use their method, and it o
 : I use this variable to determine what render mode I currently use.
 
 ### methods
-- `generateSquares(canvas, colorPalette, n)` : 
-  This method generate n*n squares in `canvas`. The `colorPalette` is passed to every square's onmouseover event listener.
+- `generateSquares(canvas, n)` : 
+  This method generate n*n squares in `canvas`.
 - `removeSquares(canvas)` : 
   This method remove all squares in the `canvas`.
 - `renderSquare(square, colorPalette)` : 
-  This is the callback when the square is on mouse over. It read the `colorPalette`'s value and `mode` to render the `square`.
+  The callback of `canvas` will call this method to render a square.
 - `clearCanvas(canvas)` : 
   This method set the color of all squares in `canvas` to be white.
-- `resetCanvas(canvas, colorPalette, mode, n)` : 
+- `resetCanvas(canvas, n)` : 
   This method call `removeSquares` and `generateSquares` to regenerate new n*n squares.
 - `setMode(newMode)` : 
   This method set `mode` to `newMode`
@@ -32,5 +32,5 @@ This file import `canvas.js` and `eventHandler.js` to use their method, and it o
 ### methods
 - `changeSquresNum(squares_nums, value)` : 
   This method set the display of the number of squares to `value`.
-- `changeActiveBtn(originBtn, newBtn)` : 
-  This method change the active btn from `originBtn` to `newBtn`. 
+- `changeActiveBtn(oldBtnSelectoer, newBtnSelector)` : 
+  This method use `oldBtnSelectoer` and `newBtnSelector` to select the old active button and the new button which is going to be active. Then remove the old btn's `active-btn` class, and add it to the new btn.
