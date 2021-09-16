@@ -8,13 +8,12 @@ function changeSquresNum(squares_nums, value) {
 }
 
 /**
- * 
- * @param {HTMLButtonElement} originBtn 
- * @param {HTMLButtonElement} newBtn 
+ * @param {string} oldBtnSelectoer
+ * @param {string} newBtnSelector
  */
-function changeActiveBtn(originBtn, newBtn) {
-    originBtn.classList.remove('active-btn');
-    newBtn.classList.add('active-btn');
+function changeActiveBtn(oldBtnSelectoer, newBtnSelector) {
+    document.querySelector(oldBtnSelectoer).classList.remove('active-btn');
+    document.querySelector(newBtnSelector).classList.add('active-btn');
 }
 
 export {changeSquresNum, changeActiveBtn};
