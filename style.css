@@ -1,0 +1,83 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-color: rgba(66, 66, 66, 1);
+}
+
+header{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 1000;
+    font-size: 36px;
+    color: #eeeeee;
+}
+
+main{
+    display: flex;
+    gap: 5em;
+}
+
+.control-panel{
+    width: 200px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    color: #eeeeee;
+}
+
+button{
+    width: 100%;
+    padding: 5px 0;
+    border: none;
+    background: none;
+    color: inherit;
+    border: 3px solid black;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+button:hover{
+    transform: scale(1.1, 1.1);
+}
+
+.active-btn{
+    background-color: black;
+
+}
+
+.control-panel p{
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.canvas{
+    border: 1px solid #aaaaaa;
+    border-right:none;
+    border-bottom: none;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.row{
+    display: flex;
+    flex: 1;
+}
+
+.row > div{
+    flex: 1;
+    background-color: white;
+}
+
+.square-grid{
+    border-right: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+}
