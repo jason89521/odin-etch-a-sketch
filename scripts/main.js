@@ -2,13 +2,13 @@ import * as MyCanvas from "./canvas.js";
 import { changeSquresNum, changeActiveBtn } from "./eventHandler.js"
 
 // Canvas related
-let canvas = document.querySelector('.canvas');
+const canvas = document.querySelector('.canvas');
 
 // Control related
-let colorPalette = document.querySelector('input[type=color]');
-let gridRange = document.querySelector('input[type=range]');
-let squares_nums = document.querySelectorAll('.squares-num');
-let controlPanel = document.querySelector('.control-panel');
+const colorPalette = document.querySelector('input[type=color]');
+const gridRange = document.querySelector('input[type=range]');
+const squares_nums = document.querySelectorAll('.squares-num');
+const controlPanel = document.querySelector('.control-panel');
 
 init();
 

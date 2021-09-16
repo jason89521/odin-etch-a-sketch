@@ -31,7 +31,7 @@ function removeSquares(canvas) {
  */
 function renderSquare(square, colorPalette) {
     if (mode === 'normal') {
-        let colorValue = colorPalette.value;
+        const colorValue = colorPalette.value;
         square.style.backgroundColor = colorValue;
         square.transparency = 1;
     }
@@ -42,10 +42,10 @@ function renderSquare(square, colorPalette) {
         square.transparency = 1;
     }
     else{
-        let hexNumber = colorPalette.value.slice(1, colorPalette.value.length);
-        let red = parseInt(hexNumber.slice(0, 2), 16);
-        let green = parseInt(hexNumber.slice(2, 4), 16);
-        let blue = parseInt(hexNumber.slice(4, 6), 16);
+        const hexNumber = colorPalette.value.slice(1, colorPalette.value.length);
+        const red = parseInt(hexNumber.slice(0, 2), 16);
+        const green = parseInt(hexNumber.slice(2, 4), 16);
+        const blue = parseInt(hexNumber.slice(4, 6), 16);
         let originColor = '';
         if(square.transparency === 1){
             // Following line uses regular expression.
@@ -54,6 +54,7 @@ function renderSquare(square, colorPalette) {
         }else{
             originColor = square.style.backgroundColor.slice(0, -4).replace(/ /g, '');
         }
+
         let newColor = 'rgba(' + red + ',' + green + ',' + blue + ',';
         if(newColor !== originColor)
             square.transparency = 0;
