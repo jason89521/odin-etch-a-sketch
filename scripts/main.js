@@ -1,4 +1,4 @@
-import * as Canvas from "./canvas.js";
+import * as MyCanvas from "./canvas.js";
 import { changeSquresNum, changeActiveBtn } from "./eventHandler.js"
 
 // Canvas related
@@ -20,23 +20,28 @@ function init() {
         squares_num.innerText = gridRange.value;
     })
 
-    Canvas.generateSquares(canvas, colorPalette, gridRange.value);
-    Canvas.setMode('normal');
+    // MyCanvas.generateSquares(canvas, colorPalette, gridRange.value);
+    MyCanvas.generateSquares(canvas, gridRange.value);
+    MyCanvas.setMode('normal');
+    canvas.addEventListener('mouseover', function(e) {
+        if(e.target.classList.contains('square-grid'))
+            MyCanvas.renderSquare(e.target, colorPalette);
+    });
 
     gridRange.addEventListener('input', (e) => changeSquresNum(squares_nums, e.target.value));
-    gridRange.addEventListener('change', (e) => Canvas.resetCanvas(canvas, colorPalette, e.target.value));
+    gridRange.addEventListener('change', (e) => MyCanvas.resetCanvas(canvas, e.target.value));
 
     normalBtn.addEventListener('click', (e) => {
-        Canvas.setMode('normal')
+        MyCanvas.setMode('normal')
         changeActiveBtn(document.querySelector('.active-btn'), normalBtn);
     });
     rainbowBtn.addEventListener('click', (e) => {
-        Canvas.setMode('rainbow');
+        MyCanvas.setMode('rainbow');
         changeActiveBtn(document.querySelector('.active-btn'), rainbowBtn);
     });
     specialBtn.addEventListener('click', (e) => {
-        Canvas.setMode('special')
+        MyCanvas.setMode('special')
         changeActiveBtn(document.querySelector('.active-btn'), specialBtn);
     });
-    clearBtn.addEventListener('click', (e) => Canvas.clearCanvas(canvas));
+    clearBtn.addEventListener('click', (e) => MyCanvas.clearCanvas(canvas));
 }

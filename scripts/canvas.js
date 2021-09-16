@@ -1,18 +1,16 @@
 let mode = 'normal';
 /**
  * @param {HTMLDivElement} canvas 
- * @param {HTMLInputElement} color
  * @param {Number} n 
  */
-function generateSquares(canvas, colorPalette, n) {
-    for (let i = 0; i < n; i++) {
-        let row = document.createElement('div');
-        row.classList.add('row')
-        for (let j = 0; j < n; j++) {
-            let square = document.createElement('div');
+function generateSquares(canvas, n) {
+    for(let i = 0; i < n; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for(let j = 0; j < n; j++) {
+            const square = document.createElement('div');
             square.classList.add('square-grid');
             square.transparency = 1;
-            square.addEventListener('mouseover', (e) => renderSquare(square, colorPalette));
             row.appendChild(square);
         }
         canvas.appendChild(row);
@@ -83,14 +81,12 @@ function clearCanvas(canvas) {
 }
 
 /**
- * @param {HTMLDivElement} canvas 
- * @param {HTMLInputElement} colorPalette
- * @param {string} mode
+ * @param {HTMLDivElement} canvas
  * @param {number} n
  */
-function resetCanvas(canvas, colorPalette, mode, n) {
+function resetCanvas(canvas, n) {
     removeSquares(canvas);
-    generateSquares(canvas, colorPalette, mode, n);
+    generateSquares(canvas, n);
 }
 
 function setMode(newMode) {
